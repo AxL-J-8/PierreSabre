@@ -21,6 +21,9 @@ public int getArgent() {
 	return argent;
 }
 
+public void setArgent(int argent) {
+	this.argent= argent;
+}
 
 public void direBonjour() {
 	parler("Bonjour ! Je m’appelle " +nom +" et j’aime boire du "+ boisson);
@@ -33,7 +36,7 @@ public void boir() {
 
 
 public void acheter(String bien, int prix) {
-	String bienEtPrix= ("m'offrir un "+bien+" à "+prix+ " sous");
+	String bienEtPrix= ("m'offrir "+bien+" à "+prix+ " sous");
     String argentEnPoche= ( argent+" sous en poche. ");
     
 	if (prix <=argent) {
@@ -54,7 +57,7 @@ public void perdreArgent(int perte) {
 	argent-=perte;
 }
 
-private void parler(String texte) {
+protected void parler(String texte) {
 	System.out.println("("+nom+")"+"-"+texte);
 }
 
