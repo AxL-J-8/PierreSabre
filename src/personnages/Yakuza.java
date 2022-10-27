@@ -23,5 +23,25 @@ public class Yakuza extends Humain{
 	   reputation+=1;
 	
 	}
-
+	
+	public int perdre() {
+		int argentPerdu=super.getArgent();
+		if (reputation>0){
+			reputation--;
+	     }
+		super.parler("");
+		return argentPerdu;
+	}
+	
+	
+	public void gagner(int gain) {
+		super.gagnerArgent(gain);
+		reputation++;
+		super.parler("");
+	}
+	
+    public int getReputation() {
+    	return reputation;
+    }
+	
 }
