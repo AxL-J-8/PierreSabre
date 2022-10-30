@@ -1,47 +1,46 @@
 package personnages;
 
-public class Yakuza extends Humain{
+public class Yakuza extends Humain {
 	private String clan;
-	private int reputation=0;
-	
-	
-	public Yakuza(String nom,String boisson,int argent,String clan) {
-		 super(nom,boisson,argent);
-		 this.clan=clan;
-		 
-	}	
-	
-	
-	public void extorquer(Commerçant victime) {
+	private int reputation = 4;
+
+	public Yakuza(String nom, String boisson, int argent, String clan) {
+		super(nom, boisson, argent);
+		this.clan = clan;
+
+	}
+
+	public void extorquer(CommerÃ§ant victime) {
+		
 	   int argentRecu;
 	   String nomVictime=victime.getNom();
-	   super.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
-	   super.parler(nomVictime+", si tu tiens à la vie donne moi ta bourse !");
+	   super.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par lï¿½ ?");
+	   super.parler(nomVictime+", si tu tiens ï¿½ la vie donne moi ta bourse !");
 	   argentRecu=victime.seFaireExtorquer();
 	   super.gagnerArgent(argentRecu);
-	   parler("J'ai piqué les "+argentRecu+" sous de "+nomVictime+" ce qui me fait "+super.getArgent()+" sous dans ma poche. Hi! Hi!");
+	   parler("J'ai piquï¿½ les "+argentRecu+" sous de "+nomVictime+" ce qui me fait "+super.getArgent()+" sous dans ma poche. Hi! Hi!");
 	   reputation+=1;
 	
 	}
-	
+
 	public int perdre() {
-		int argentPerdu=super.getArgent();
-		if (reputation>0){
+		
+		int argentPerdu = super.getArgent();
+		if (reputation > 0) {
 			reputation--;
-	     }
-		super.parler("");
+		}
+		super.parler(" Jâ€™ai perdu mon duel et mes "+ argentPerdu+" sous, snif... J'ai dÃ©shonorÃ© le clan de "+clan);
 		return argentPerdu;
 	}
-	
-	
+
 	public void gagner(int gain) {
 		super.gagnerArgent(gain);
 		reputation++;
-		super.parler("");
+		super.parler("Ce ronin pensait vraiment battre "+super.getNom()+" du clan de "+clan+ " Je l'ai dÃ©pouillÃ© de ses "+ gain +" sous");
 	}
-	
-    public int getReputation() {
-    	return reputation;
-    }
-	
+
+	public int getReputation() {
+		return reputation;
+	}
+
 }
