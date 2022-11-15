@@ -26,7 +26,6 @@ public class Humain {
 	public void setArgent(int argent) {
 		this.argent = argent;
 	}
-
 	public void direBonjour() {
 		parler("Bonjour ! Je m�appelle " + nom + " et j�aime boire du " + boissonFavorite);
 	}

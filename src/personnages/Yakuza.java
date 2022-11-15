@@ -9,22 +9,27 @@ public class Yakuza extends Humain {
 		this.clan = clan;
 
 	}
+	@Override
+	public void direBonjour() {
+		super.direBonjour();
+		parler("Mon clan est celui de "+clan);
+	}
 
 	public void extorquer(Commerçant victime) {
-		
-	   int argentRecu;
-	   String nomVictime=victime.getNom();
-	   super.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par lï¿½ ?");
-	   super.parler(nomVictime+", si tu tiens ï¿½ la vie donne moi ta bourse !");
-	   argentRecu=victime.seFaireExtorquer();
-	   super.gagnerArgent(argentRecu);
-	   parler("J'ai piquï¿½ les "+argentRecu+" sous de "+nomVictime+" ce qui me fait "+super.getArgent()+" sous dans ma poche. Hi! Hi!");
-	   reputation+=1;
-	
+
+		int argentRecu;
+		String nomVictime=victime.getNom();
+		super.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par lï¿½ ?");
+		super.parler(nomVictime+", si tu tiens ï¿½ la vie donne moi ta bourse !");
+		argentRecu=victime.seFaireExtorquer();
+		super.gagnerArgent(argentRecu);
+		parler("J'ai piquï¿½ les "+argentRecu+" sous de "+nomVictime+" ce qui me fait "+super.getArgent()+" sous dans ma poche. Hi! Hi!");
+		reputation+=1;
+
 	}
 
 	public int perdre() {
-		
+
 		int argentPerdu = super.getArgent();
 		if (reputation > 0) {
 			reputation--;
