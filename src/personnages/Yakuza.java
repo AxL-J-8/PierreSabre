@@ -10,7 +10,7 @@ public class Yakuza extends Humain {
 
 	}
 
-	public void extorquer(CommerÃ§ant victime) {
+	public void extorquer(Commerçant victime) {
 		
 	   int argentRecu;
 	   String nomVictime=victime.getNom();
